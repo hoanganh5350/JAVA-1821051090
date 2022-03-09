@@ -1,49 +1,36 @@
 public static void main(String[] args) {
-    int n, temp, max = 100;
+    // khai báo số dòng và số cột của ma trận
+    int m, n;
+         
     Scanner scanner = new Scanner(System.in);
-        
-    // khai báo và cấp phát bộ nhớ cho mảng A
-    int A[] = new int[max];
-        
-    // nhập số phần tử của mảng
-    // kiểm tra nếu n <= 2 hoặc n > max - 1
-    // thì phải nhập lại
-    do {
-        System.out.println("Nhập số phần tử của mảng: ");
-        n = scanner.nextInt();
-    } while (n <= 2 || n > max-1);
-        
-    System.out.println("Nhập giá trị cho các phần tử của mảng: ");
-    for (int i = 0; i < n; i++) {
-        System.out.print("A[" + i + "] = ");
-        A[i] = scanner.nextInt();
+         
+    System.out.println("Nhập vào số dòng của ma trận: ");
+    m = scanner.nextInt();
+    System.out.println("Nhập vào số cột của ma trận: ");
+    n = scanner.nextInt();
+         
+    // khai báo ma trận A có m dòng, n cột
+    int A[][] = new int[m][n];
+         
+    System.out.println("Nhập các phần tử cho ma trận: ");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            System.out.print("A[" + i + "]["+ j + "] = ");
+            A[i][j] = scanner.nextInt();
+        }
     }
-        
-    // in ra màn hình mảng số ban đầu
-    System.out.println("Mảng ban đầu: ");
-    for (int i = 0; i < n; i++) {
-        // in các phần tử trên cùng 1 dòng
-        System.out.print(A[i] + "\t");
-    }
-        
-    // sắp xếp các phần tử trong mảng
-    // vòng lặp for sẽ duyệt i và j
-    // i chạy từ 0 đến n - 2, j chay từ i + 1 đến n - 1
-    // nếu phần tử tại chỉ số j nhỏ hơn phần tử tại i
-    // thì sẽ hoán đổi vị trí 2 phần tử này cho nhau
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = i+1; j <= n - 1; j++) {
-            if (A[j] < A[i]) {
-                temp = A[i];
-                A[i] = A[j];
-                A[j] = temp;
+         
+    // tìm phần tử có giá trị lớn nhất trong ma trận
+    // giả sử phần tử tại vị trí (0,0) là phần tử lớn nhất
+    int max = A[0][0];
+         
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (max < A[i][j]) {
+                max = A[i][j];
             }
         }
     }
-        
-    // in ra màn hình mảng số sau khi sắp xếp
-    System.out.println("\nMảng sau khi sắp xếp: ");
-    for (int i = 0; i < n; i++) {
-        System.out.print(A[i] + "\t");
-    }
+         
+    System.out.println("Phần tử lớn nhất trong ma trận = " + max);
 }
