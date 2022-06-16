@@ -1,20 +1,37 @@
 package Animal;
 
-public class Tiger implements Animal {
-    public void Eat(){
-        System.out.println("Ho an thit");
+// import BuildClass.Animal;
+
+public class Tiger extends Animal {
+
+    @Override
+    void Eat() {
+        // TODO Auto-generated method stub
+        
     }
-    public void Sleep(){
-        Systeam.out.println("Ho ngu vao ban dem");
+
+    @Override
+    void Sleep() {
+        // TODO Auto-generated method stub
+        
     }
-    public void Walk(){
-        System.out.println("Ho di bang bon chan");
+
+    @Override
+    void Walk() {
+        // TODO Auto-generated method stub
+        
     }
-    public void Run(){
-        System.out.println("Ho chay nhanh");
+
+    @Override
+    void Run() {
+        // TODO Auto-generated method stub
+        
     }
-    public void Roar(){
-        System.out.println("Ho keu to");
+
+    @Override
+    void Roar() {
+        // TODO Auto-generated method stub
+        
     }
     
 }
